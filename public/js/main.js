@@ -21177,12 +21177,30 @@ var List = React.createClass({
       return React.createElement(ListItem, { key: item.id, detail: item.text });
     };
 
+    var divStyle = {
+      margin: 10,
+      backgroundColor: 'gray',
+      color: 'blue'
+    };
+
     return React.createElement(
-      'ul',
-      null,
-      ' ',
-      detailList.map(createItem),
-      ' '
+      'div',
+      { className: 'row' },
+      React.createElement(
+        'div',
+        { className: 'panel panel-body', style: divStyle },
+        React.createElement(
+          'div',
+          { className: 'col-sm-12' },
+          React.createElement(
+            'ul',
+            null,
+            ' ',
+            detailList.map(createItem),
+            ' '
+          )
+        )
+      )
     );
   }
 });
@@ -21194,6 +21212,7 @@ var React = require('react');
 
 var ListItem = React.createClass({
   displayName: 'ListItem',
+
 
   render: function () {
     return React.createElement(

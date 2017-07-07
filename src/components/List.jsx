@@ -9,7 +9,23 @@ var List = React.createClass({
       return <ListItem key={ item.id } detail={item.text} />;
     };
 
-    return (<ul> { detailList.map(createItem) } </ul>);
+    var divStyle = {
+      margin: 10,
+      backgroundColor: 'gray',
+      color: 'blue'
+    };
+
+    return (
+      <div className="row">
+          <div className="panel panel-body" style={divStyle} >
+              <div className="col-sm-12"  >
+                <ul> { detailList.map(createItem) } </ul>
+              </div>
+          </div>
+      </div>
+    )
+      ;
+
   }
 });
 
